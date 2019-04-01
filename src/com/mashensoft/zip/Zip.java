@@ -36,6 +36,17 @@ public class Zip {
 	public static void zipFile(String sourceFile, String descFilePath) throws Exception {
 		File file = new File(sourceFile);
 		String fileName = file.getName();
+		System.out.println(fileName);
+		if(fileName.startsWith(".")) {
+			descFilePath = sourceFile+".zip";
+			System.out.println(descFilePath);
+		}else if(!fileName.startsWith(".")&&fileName.contains(".")) {
+			descFilePath = sourceFile.substring(0,descFilePath.lastIndexOf("."))+".zip";
+			System.out.println(descFilePath);
+		}
+		
+		
+		
 		ZipOutputStream zip = new ZipOutputStream(new FileOutputStream(descFilePath));
 		ZipEntry zipEntry = new ZipEntry(fileName);
 		zip.putNextEntry(zipEntry);
