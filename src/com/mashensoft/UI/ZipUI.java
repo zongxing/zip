@@ -17,7 +17,11 @@ import javax.swing.filechooser.FileFilter;
 
 import com.mashensoft.zip.Unzip;
 import com.mashensoft.zip.Zip;
-
+/**
+ * 解压用户界面类
+ * @author zongxing
+ *
+ */
 public class ZipUI extends JFrame {
 	File sourceFile = null;
 
